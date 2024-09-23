@@ -1,4 +1,4 @@
-export type PokedexTheme = "blue" | "red" | "yellow" | "green";
+export type PokedexTheme = 'blue' | 'red' | 'yellow' | 'green';
 export type PokemonUri = {
   name: string;
   url: string;
@@ -6,6 +6,14 @@ export type PokemonUri = {
 
 export type PokemonAbility = {
   ability: {
+    name: string;
+    url: string;
+  };
+};
+
+export type PokemonWeakness = {
+  slot: number;
+  weakness: {
     name: string;
     url: string;
   };
@@ -32,6 +40,7 @@ export type Pokemon = {
   name: string;
   stats: PokemonStat[];
   types: PokemonType[];
+  weaknesses: PokemonWeakness[];
   weight: number;
   height: number;
   abilities: PokemonAbility[];
