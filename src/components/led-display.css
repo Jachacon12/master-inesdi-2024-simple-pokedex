@@ -11,28 +11,52 @@
 }
 
 .led-display {
-  --size: 20px;
-  width: var(--size);
-  height: var(--size);
+  --size: 36px;
+  min-width: var(--size);
+  aspect-ratio: 1;
+  width: 100%;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
   animation: none;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .led-red {
-  background-color: var(--dark-red);
-  border: 2px solid var(--darker-red);
+  background: radial-gradient(
+    circle,
+    rgba(232, 86, 86, 1) 0%,
+    rgba(117, 8, 8, 1) 100%
+  );
+  border-color: rgba(117, 8, 8, 0.3);
 }
 
 .led-yellow {
-  background-color: var(--dark-yellow);
-  border: 2px solid var(--darker-yellow);
+  background: radial-gradient(
+    circle,
+    rgba(240, 240, 161, 1) 0%,
+    rgba(161, 161, 109, 1) 100%
+  );
+  border-color: rgba(161, 161, 109, 0.3);
 }
 
 .led-blue {
-  background-color: var(--dark-blue);
-  border: 2px solid var(--darker-blue);
+  background: radial-gradient(
+    circle,
+    rgba(122, 122, 212, 1) 0%,
+    rgba(74, 74, 143, 1) 100%
+  );
+  border-color: rgba(74, 74, 143, 0.3);
+}
+
+.led-green {
+  background: radial-gradient(
+    circle,
+    rgba(86, 232, 86, 1) 0%,
+    rgba(43, 139, 43, 1) 100%
+  );
+  border-color: rgba(43, 139, 43, 0.3);
 }
 
 .led-display--active {
