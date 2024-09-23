@@ -1,4 +1,5 @@
 export type PokedexTheme = 'blue' | 'red' | 'yellow' | 'green';
+export type ToastType = 'success' | 'warning';
 export type PokemonUri = {
   name: string;
   url: string;
