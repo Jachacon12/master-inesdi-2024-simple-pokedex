@@ -1,5 +1,6 @@
-import type { Pokemon, PokemonUri } from "models";
-import { useEffect, useState } from "react";
+import type { Pokemon, PokemonUri } from 'models';
+import { useEffect, useState } from 'react';
+import { calculateWeakness } from 'utils/WeaknessCalculator';
 
 const cache = new Map<string, Pokemon>();
 
@@ -12,10 +13,12 @@ export function usePokemon(pokemonUri: PokemonUri) {
       try {
         const response = await fetch(pokemonUri.url);
         const data = await response.json();
-        cache.set(pokemonUri.url, data);
-        setPokemon(data);
+        const weaknesses = calculateWeakness(data.types);
+        const pokemon = { ...data, weaknesses: weaknesses };
+        cache.set(pokemonUri.url, pokemon);
+        setPokemon(pokemon);
       } catch (error) {
-        console.error("Error fetching Pokemon:", error);
+        console.error('Error fetching Pokemon:', error);
       } finally {
         setIsLoading(false);
       }
