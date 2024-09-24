@@ -389,7 +389,7 @@
 .details-wrapper {
   align-items: center;
   display: inline-grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto;
   max-width: 68%;
   justify-self: center;
   width: 100%;
@@ -412,6 +412,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: right;
 }
 .team-grid {
   display: grid;
@@ -446,6 +447,7 @@
 
 .message-wrapper {
   grid-column: span 3;
+  margin: 0 5px;
 }
 
 .symbols-row {
