@@ -1,10 +1,10 @@
-import c from "classnames";
-import { useTheme } from "contexts/use-theme";
+import c from 'classnames';
+import { useTheme } from 'contexts/use-theme';
 
-import "./led-display.css";
+import './led-display.css';
 
 type Props = {
-  color: "blue" | "red" | "yellow";
+  color: 'blue' | 'red' | 'yellow' | 'green';
 };
 
 export function LedDisplay({ color }: Props) {
@@ -14,9 +14,9 @@ export function LedDisplay({ color }: Props) {
   return (
     <div
       className={c(
-        "led-display",
+        'led-display',
         `led-${color}`,
-        isActive && "led-display--active"
+        isActive && 'led-display--active'
       )}
       onClick={() => setTheme(color)}
     ></div>
