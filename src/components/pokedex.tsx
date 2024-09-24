@@ -139,17 +139,41 @@ export function Pokedex() {
                     ))}
                   </div>
                 </details>
-                <p>Height: {selectedPokemon.height}</p>
-                <p>Weight: {selectedPokemon.weight}</p>
-                <div className="symbols-row">
-                  {selectedPokemon.types.slice(0, 3).map(a => (
-                    <img
-                      key={`${a.type?.name} symbol`}
-                      className="symbol"
-                      src={`/img/${a.type?.name}.png`}
-                      alt={`${a.type?.name} symbol`}
-                    />
-                  ))}
+                <p
+                  className={c(
+                    'obfuscated',
+                    ready && 'ready',
+                    ready && `ready--${randomMode()}`
+                  )}
+                >
+                  Height: {selectedPokemon.height}
+                </p>
+                <p
+                  className={c(
+                    'obfuscated',
+                    ready && 'ready',
+                    ready && `ready--${randomMode()}`
+                  )}
+                >
+                  Weight: {selectedPokemon.weight}
+                </p>
+                <div
+                  className={c(
+                    'obfuscated',
+                    ready && 'ready',
+                    ready && `ready--${randomMode()}`
+                  )}
+                >
+                  <div className="symbols-row">
+                    {selectedPokemon.types.slice(0, 3).map(a => (
+                      <img
+                        key={`${a.type?.name} symbol`}
+                        className="symbol"
+                        src={`/img/${a.type?.name}.png`}
+                        alt={`${a.type?.name} symbol`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
