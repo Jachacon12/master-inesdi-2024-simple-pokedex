@@ -447,3 +447,12 @@
 .message-wrapper {
   grid-column: span 3;
 }
+
+.symbols-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.symbol {
+  max-width: 36px;
+}

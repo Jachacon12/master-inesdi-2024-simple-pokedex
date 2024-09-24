@@ -9,7 +9,6 @@ import './pokedex.css';
 import { ToastContainer } from 'react-toastify';
 import { addToTeam, loadTeamFromLocalStorage } from '../hooks/addToTeam';
 import { Pokemon } from 'models';
-import pokeball from '../img/pokeball.svg';
 
 export function Pokedex() {
   const { theme } = useTheme();
@@ -99,7 +98,7 @@ export function Pokedex() {
                   onClick={() => addToTeam(selectedPokemon, team, setTeam)}
                   className="add-button"
                 >
-                  <img src={pokeball} />
+                  <img src="/img/pokeball.svg" />
                 </div>
               </div>
             </>
@@ -142,6 +141,16 @@ export function Pokedex() {
                 </details>
                 <p>Height: {selectedPokemon.height}</p>
                 <p>Weight: {selectedPokemon.weight}</p>
+                <div className="symbols-row">
+                  {selectedPokemon.types.slice(0, 3).map(a => (
+                    <img
+                      key={`${a.type?.name} symbol`}
+                      className="symbol"
+                      src={`/img/${a.type?.name}.png`}
+                      alt={`${a.type?.name} symbol`}
+                    />
+                  ))}
+                </div>
               </div>
             )}
           </div>
