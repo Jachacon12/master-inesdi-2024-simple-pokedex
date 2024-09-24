@@ -136,6 +136,12 @@
   font-size: larger;
   font-weight: 800;
 }
+@media (max-width: 768px) {
+  .right-panel .name-display {
+    height: 100%;
+    grid-template-columns: 1fr;
+  }
+}
 
 .left-panel .main-screen {
   width: 68%;
@@ -188,7 +194,8 @@
 }
 @media (max-width: 768px) {
   .right-panel .second-screen {
-    height: 170px;
+    height: 100%;
+    max-height: unset;
   }
 }
 .obfuscated {
@@ -329,7 +336,6 @@
   position: relative;
   transition: 0.15s color linear;
   width: 100%;
-  z-index: 1;
 }
 
 .information-button:hover,
@@ -337,8 +343,8 @@
   color: var(--dark-green);
 }
 
-.information-button:last-child:hover,
-.information-button:last-child:focus {
+.information-button:last-of-type:hover,
+.information-button:last-of-type:focus {
   color: var(--dark-red);
 }
 
